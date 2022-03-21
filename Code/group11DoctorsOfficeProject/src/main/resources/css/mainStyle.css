@@ -1,0 +1,12 @@
+.label{
+    -fx-font-family: "Arial Bold";
+}
+
+.button{
+    -fx-font-family: "Arial Bold";
+    -fx-font-size: 15px;
+}
+
+.text-field{
+    -fx-font-family: "Arial Bold";
+}

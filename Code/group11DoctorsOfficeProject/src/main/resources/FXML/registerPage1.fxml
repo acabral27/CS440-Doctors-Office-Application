@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="root2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="registerPage1Controller">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="380.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/registerDoctorPic.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="596.0" prefWidth="489.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="34.0" layoutY="110.0" text="Create your account" textFill="#001eff">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="180.0" text="First Name" textFill="#001eff">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="242.0" layoutY="180.0" text="Last Name" textFill="#001eff">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="fnField" layoutX="30.0" layoutY="202.0" onKeyReleased="#firstNameEntered" />
+            <TextField fx:id="lnField" layoutX="245.0" layoutY="202.0" onKeyReleased="#lastNameEntered" />
+            <Label layoutX="29.0" layoutY="241.0" text="Email" textFill="#001eff">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emailField" layoutX="29.0" layoutY="263.0" onKeyReleased="#emailEntered" />
+            <Label layoutX="244.0" layoutY="240.0" text="Username" textFill="#001eff">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameTextField" layoutX="244.0" layoutY="262.0" onKeyReleased="#usernameEntered" />
+            <Label layoutX="29.0" layoutY="303.0" text="Password" textFill="#001eff">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="pwField" layoutX="29.0" layoutY="322.0" onKeyReleased="#passwordEntered" />
+            <Label layoutX="244.0" layoutY="303.0" text="Confirm Password" textFill="#001eff">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="cpwField" layoutX="244.0" layoutY="322.0" onKeyReleased="#confirmPasswordEntered" />
+            <Button fx:id="createAccountBtn" layoutX="100.0" layoutY="529.0" mnemonicParsing="false" onAction="#createAccountBtnPressed" prefHeight="44.0" prefWidth="221.0" style="-fx-background-color: #001eff;" text="Create account" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="53.0" fitWidth="236.0" layoutX="99.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/doctorLogo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="errorLabel" alignment="CENTER" layoutX="69.0" layoutY="151.0" prefHeight="19.0" prefWidth="283.0" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="dobField" layoutX="28.0" layoutY="395.0" onKeyReleased="#dobEntered" />
+            <Label layoutX="28.0" layoutY="364.0" text="Date of Birth" textFill="#001eff">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="addressField" layoutX="245.0" layoutY="395.0" onKeyReleased="#addressEntered" />
+            <Label layoutX="245.0" layoutY="364.0" text="Address" textFill="#001eff">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pnField" layoutX="247.0" layoutY="474.0" onKeyReleased="#pnEntered" />
+            <Label layoutX="247.0" layoutY="445.0" text="Phone Number" textFill="#001eff">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="insField" layoutX="28.0" layoutY="477.0" onKeyReleased="#dobEntered" />
+            <Label layoutX="28.0" layoutY="446.0" text="Insurance" textFill="#001eff">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="backBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backBtnPressed" text="Back" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="root3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="patientDashboardController">
+   <left>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="70.0" style="-fx-background-color: #001eff;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox id="navBar" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-radius: 4em; -fx-background-color: #001eff;">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/homeIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="calendarBtn" mnemonicParsing="false" onAction="#calendarPressed" style="-fx-background-radius: 4em; -fx-background-color: #001eff;">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/calendarIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="settingsBtn" mnemonicParsing="false" onAction="#settingsPressed" style="-fx-background-radius: 4em; -fx-background-color: #001eff;">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/cog.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="logOutBtn" mnemonicParsing="false" onAction="#logOutPressed" style="-fx-background-radius: 4em; -fx-background-color: #001eff;">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/logout.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox fx:id="vbox" prefHeight="600.0" prefWidth="351.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="153.0" prefWidth="430.0">
+               <children>
+                  <Pane minHeight="-Infinity" prefHeight="223.0" prefWidth="390.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="195.0" layoutY="27.0" stroke="#e9ecee" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="267.0" />
+                        <Circle fx:id="profileIcon" fill="DODGERBLUE" layoutX="134.0" layoutY="46.0" radius="46.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                        <Label fx:id="patientName" layoutX="101.0" layoutY="108.0" text="Bob Doe">
+                           <font>
+                              <Font name="Arial Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Text fill="#001eff" layoutX="28.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height" />
+                        <Text fill="#001eff" layoutX="114.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" />
+                        <Text fill="#001eff" layoutX="208.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DoB" />
+                        <Label fx:id="pHeight" layoutX="39.0" layoutY="178.0" text="69">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="pWeight" layoutX="114.0" layoutY="178.0" text="160">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="pDoB" layoutX="189.0" layoutY="178.0" text="10/31/2021">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Text layoutX="138.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lbs">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="59.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="in">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </HBox>
+            <Text fill="#001eff" strokeType="OUTSIDE" strokeWidth="0.0" text="Upcoming Appointments">
+               <VBox.margin>
+                  <Insets left="20.0" top="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Text>
+            <ListView fx:id="appointmentList" maxWidth="-Infinity" onMouseClicked="#handleMouseClick" prefHeight="200.0" prefWidth="378.0" style="-fx-background-radius: 20;">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </ListView>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="deleteApt" disable="true" mnemonicParsing="false" onAction="#deleteAptClicked" prefHeight="25.0" prefWidth="174.0" style="-fx-background-color: #fc0303;" text="Cancel Appointment" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="mapBtn" disable="true" mnemonicParsing="false" onAction="#mapBtnPressed" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #3fcd32;" text="Show me on map" />
+               </children>
+               <VBox.margin>
+                  <Insets left="30.0" top="-10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

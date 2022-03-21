@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="rootA" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="staffDashboardController">
+   <left>
+      <VBox id="navBar" alignment="CENTER" prefHeight="600.0" prefWidth="70.0" spacing="60.0" style="-fx-background-color: #001eff;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-radius: 4em; -fx-background-color: #001eff;" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/homeIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="myPatientsBtn" mnemonicParsing="false" onAction="#myPatientsBtn" style="-fx-background-radius: 4em; -fx-background-color: #001eff;">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/patients.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="logOutBtn" mnemonicParsing="false" onAction="#logOutPressed" style="-fx-background-radius: 4em; -fx-background-color: #001eff;">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/logout.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="40.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Pane prefHeight="100.0" prefWidth="411.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="100.0" stroke="#e9ecee" strokeType="INSIDE" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="413.0" />
+                        <Text layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, Dr. ">
+                           <font>
+                              <Font name="Arial Bold" size="22.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="drLastName" layoutX="159.0" layoutY="35.0" text="Smith">
+                           <font>
+                              <Font name="Arial Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="324.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/medicalIcon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <HBox prefHeight="22.0" prefWidth="452.0" spacing="10.0">
+               <children>
+                  <Label text="Agenda for:">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="agendaDate" >
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <ListView fx:id="upcomingAppointments" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="329.0" prefWidth="407.0" style="-fx-border-radius: 20; -fx-background-radius: 20;">
+               <VBox.margin>
+                  <Insets left="25.0" top="-20.0" />
+               </VBox.margin>
+            </ListView>
+         </children>
+         <BorderPane.margin>
+            <Insets top="30.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <right>
+      <VBox prefHeight="600.0" prefWidth="278.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter agenda by date:">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="35.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <DatePicker fx:id="datePicker2" onAction="#dateSelected" prefHeight="25.0" prefWidth="206.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="-20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets top="30.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+</BorderPane>
